@@ -31,8 +31,6 @@ def retrieve_and_generate(query, doc_embeddings, query_embedding, texts, model_n
         answer = out
     return answer
 
-# Note: you need an embedding model (e.g., sentence-transformers) to produce doc_embeddings and query_embedding.
-
 if __name__ == "__main__":
     # Sample documents
     texts = [

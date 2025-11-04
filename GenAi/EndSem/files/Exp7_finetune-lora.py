@@ -73,7 +73,7 @@ print(f"\n=== FINE-TUNING WITH LoRA ===")
 lora_model.train()
 optimizer = torch.optim.AdamW(lora_model.parameters(), lr=5e-5)
 
-for epoch in range(3):  # Few epochs for demonstration
+for epoch in range(3): 
     total_loss = 0
     for text in training_corpus:
         inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=128).to(device)
@@ -97,7 +97,6 @@ print("Generated Text:", finetuned_text)
 finetuned_loss, finetuned_perplexity = evaluate_perplexity(lora_model, tokenizer, corpus_text, device)
 print(f"Fine-tuned Model - Loss: {finetuned_loss:.4f}, Perplexity: {finetuned_perplexity:.4f}")
 
-# Summary comparison
 print(f"\n=== COMPARISON SUMMARY ===")
 print(f"Base Model      - Perplexity: {base_perplexity:.4f}")
 print(f"Fine-tuned Model - Perplexity: {finetuned_perplexity:.4f}")
